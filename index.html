@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invite</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-shell" aria-label="Interactive wedding invitation">
+    <section class="invite-card" id="inviteCard" aria-label="Tap or click to flip invitation" tabindex="0">
+      <div class="card-inner" id="cardInner">
+        <div class="card-face card-front">
+          <img id="frontImage" alt="Front of wedding invitation" />
+        </div>
+
+        <div class="card-face card-back">
+          <img id="backImage" alt="Back of wedding invitation" />
+          <a id="linkBox" class="link-box" target="_blank" rel="noopener noreferrer" aria-label="Open invitation link"></a>
+        </div>
+      </div>
+    </section>
+
+    <button id="flipButton" class="flip-button" type="button">Tap to flip</button>
+  </main>
+
+  <script src="settings.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--page-background, #f8e7dc);
+  color: #222;
+}
+
+.page-shell {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: var(--page-padding, 20px);
+}
+
+.invite-card {
+  width: var(--card-width, min(92vw, 520px));
+  aspect-ratio: var(--card-aspect-ratio, 5 / 7);
+  perspective: 1200px;
+  cursor: pointer;
+  outline: none;
+}
+
+.invite-card:focus-visible {
+  outline: 4px solid rgba(0, 0, 0, 0.35);
+  outline-offset: 6px;
+  border-radius: var(--card-radius, 18px);
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform var(--flip-speed, 700ms) ease;
+}
+
+.invite-card.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--card-radius, 18px);
+  overflow: hidden;
+  background: var(--card-background, #ffffff);
+  box-shadow: var(--card-shadow, 0 18px 45px rgba(0, 0, 0, 0.22));
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: var(--image-fit, contain);
+  display: block;
+  background: var(--image-background, transparent);
+}
+
+.link-box {
+  position: absolute;
+  display: block;
+  left: var(--link-x, 25%);
+  top: var(--link-y, 72%);
+  width: var(--link-width, 50%);
+  height: var(--link-height, 10%);
+  border-radius: var(--link-radius, 10px);
+  text-decoration: none;
+}
+
+.link-box.preview-on {
+  background: rgba(255, 0, 0, 0.25);
+  border: 3px dashed rgba(255, 0, 0, 0.9);
+}
+
+.flip-button {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 700;
+  background: var(--button-background, #ffffff);
+  color: var(--button-text, #222222);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+}
+
+.flip-button:hover {
+  transform: translateY(-1px);
+}
+
+.flip-button:active {
+  transform: translateY(0);
+}
+
+.hidden {
+  display: none;
+}
