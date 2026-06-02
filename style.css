@@ -77,7 +77,7 @@ body {
   position: absolute;
   display: block;
   left: var(--link-x, 12%);
-  top: var(--link-y, 85%);
+  top: var(--link-y, 90%);
   width: var(--link-width, 75%);
   height: var(--link-height, 10%);
   border-radius: var(--link-radius, 10px);
