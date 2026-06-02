@@ -66,7 +66,7 @@ const SETTINGS = {
     {
       side: "back",
       label: "Open RSVP email",
-      url: "mailto:eallison331@://gmail.com",
+      url: "mailto:eallison331@gmail.com?subject=RSVP-Evans%20%26%20Bhetwal%20Engagement%20Party&body=Guest%20Name%3A%0AAttending%20%28Yes%2FNo%29%3A",
       x: 20,
       y: 90,
       width: 65,
