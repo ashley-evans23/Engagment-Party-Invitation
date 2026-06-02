@@ -42,7 +42,7 @@ const SETTINGS = {
 
   // Link settings.
   // Put the RSVP link, registry link, wedding website, etc. here.
-  linkUrl: "https://mailto:eallison331@gmail.com",
+  linkUrl: "mailto:eallison331@://gmail.com",
 
   // Turn this ON while editing so you can see the clickable link box.
   // Turn this OFF before sharing the final invite.
