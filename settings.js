@@ -8,7 +8,7 @@
 const SETTINGS = {
   // Page background. You can use color names like "red", "lightpink", "lavender",
   // or hex codes like "#f8e7dc".
-  backgroundColor: "#f8e7dc",
+  backgroundColor: "#4C0000",
 
   // Image filenames. Replace front.png and back.png with your own Canva exports.
   // Keep the filenames the same unless you change them here too.
@@ -21,7 +21,7 @@ const SETTINGS = {
   // Card shape. For portrait invitations, 5 / 7 works well.
   // If your Canva design is 1080 x 1920, use "9 / 16".
   // If your design is square, use "1 / 1".
-  cardAspectRatio: "5 / 7",
+  cardAspectRatio: "17 / 22",
 
   // Image fit.
   // "contain" shows the entire image without cropping.
@@ -58,17 +58,17 @@ const SETTINGS = {
       label: "Open front link",
       url: "https://example.com",
       x: 25,
-      y: 72,
+      y: 75,
       width: 50,
-      height: 10
+      height: 15
     },
 
     {
       side: "back",
       label: "Open RSVP email",
-      url: "mailto:someone@example.com?subject=Wedding RSVP",
-      x: 25,
-      y: 72,
+      url: "mailto:eallison331@gmail.com?subject=RSVP to Evans & Bhetwal Engagement Party",
+      x: 12,
+      y: 90,
       width: 50,
       height: 10
     }
