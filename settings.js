@@ -59,7 +59,7 @@ const SETTINGS = {
       url: "https://www.google.com/maps/place/6401+Saratoga+Trail,+Frederick,+CO+80516/@40.092416,-105.0031001,17z/data=!3m1!4b1!4m6!3m5!1s0x876c09b152d1600f:0x7ad33da8a398204c!8m2!3d40.092416!4d-105.0031001!16s%2Fg%2F11hbvtfr6c?entry=ttu&g_ep=EgoyMDI2MDUzMS4wIKXMDSoASAFQAw%3D%3D",
       x: 50,
       y: 75,
-      width: 50,
+      width: 40,
       height: 15
     },
 
@@ -69,7 +69,7 @@ const SETTINGS = {
       url: "mailto:eallison331@gmail.com?subject=RSVP to Evans & Bhetwal Engagement Party",
       x: 25,
       y: 90,
-      width: 50,
+      width: 60,
       height: 10
     }
   ]
