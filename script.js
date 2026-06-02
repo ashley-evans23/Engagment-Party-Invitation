@@ -2,7 +2,6 @@
   const card = document.getElementById("inviteCard");
   const frontImage = document.getElementById("frontImage");
   const backImage = document.getElementById("backImage");
-  const linkBox = document.getElementById("linkBox");
   const flipButton = document.getElementById("flipButton");
 
   const settings = window.SETTINGS || SETTINGS;
@@ -26,15 +25,6 @@
   frontImage.src = settings.frontImage || "front.png";
   backImage.src = settings.backImage || "back.png";
 
-  linkBox.href = settings.linkUrl || "#";
-  linkBox.classList.toggle("preview-on", settings.showLinkBox === true);
-
-  const box = settings.linkBox || { x: 25, y: 72, width: 50, height: 10 };
-  setCSSVariable("--link-x", `${box.x}%`);
-  setCSSVariable("--link-y", `${box.y}%`);
-  setCSSVariable("--link-width", `${box.width}%`);
-  setCSSVariable("--link-height", `${box.height}%`);
-
   flipButton.textContent = settings.flipButtonText || "Tap to flip";
   flipButton.classList.toggle("hidden", settings.showFlipButton === false);
 
@@ -42,11 +32,43 @@
     card.classList.toggle("is-flipped");
   }
 
-  if (settings.flipOnCardClick !== false) {
-    card.addEventListener("click", function (event) {
-      if (event.target === linkBox) return;
-      flipCard();
+  function createLinkBoxes() {
+    const linkBoxes = settings.linkBoxes || [];
+
+    linkBoxes.forEach(function (box, index) {
+      const link = document.createElement("a");
+
+      link.href = box.url || "#";
+      link.className = "link-box";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.setAttribute("aria-label", box.label || `Open invitation link ${index + 1}`);
+
+      link.style.left = `${box.x}%`;
+      link.style.top = `${box.y}%`;
+      link.style.width = `${box.width}%`;
+      link.style.height = `${box.height}%`;
+
+      if (settings.showLinkBox === true) {
+        link.classList.add("preview-on");
+      }
+
+      link.addEventListener("click", function (event) {
+        event.stopPropagation();
+      });
+
+      if (box.side === "front") {
+        document.querySelector(".card-front").appendChild(link);
+      } else {
+        document.querySelector(".card-back").appendChild(link);
+      }
     });
+  }
+
+  createLinkBoxes();
+
+  if (settings.flipOnCardClick !== false) {
+    card.addEventListener("click", flipCard);
   }
 
   card.addEventListener("keydown", function (event) {
