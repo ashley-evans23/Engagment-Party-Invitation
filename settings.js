@@ -42,7 +42,7 @@ const SETTINGS = {
 
   // Turn this ON while editing so you can see the clickable link boxes.
   // Turn this OFF before sharing the final invite.
-  showLinkBox: true,
+  showLinkBox: false,
 
   // Link box placement is measured in percentages of the card.
   // side = "front" or "back"
